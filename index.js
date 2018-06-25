@@ -15,21 +15,13 @@ if(process.env.PORT) {
 	key = require('./config.js');
 }
 
-console.log(process.env);
-
-console.log(key);
-
+//Serves the contents of ${__dirname}/client/build as static assets to the browser (html, css, and js files); 
 app.use(express.static(`${__dirname}/client/build`));
-
-app.get('/', (req, res) => {
-	res.end();
-})
 
 //example route
 app.get('/api/questions', (req, res) => {
 	//perform data manipulation and return request
 });
-
 
 //We set port to be equals to the Heroku local variable process.env.PORT
 //if the variable is not available (in development) port will default to 5000
